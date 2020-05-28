@@ -1,0 +1,19 @@
+<div class="row" style="text-align: center; padding-top: 100px;">
+    <div class="col-md-4 offset-md-4 mt-4">
+      <h1>Welkom</h1>
+      <h4>Login om memory te spelen</h4>
+        <br>
+        <form #f="ngForm" (ngSubmit)="onSubmit()" style="text-align: center;">
+          <div class="form-group">
+            <label for="loginUsername">Gebruikersnaam</label>
+            <input type="text" name="username" class="form-control" [(ngModel)]="username" />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Wachtwoord ( test )</label>
+            <input type="password" name="password" class="form-control" [(ngModel)]="password" />
+          </div>
+          <p *ngIf="errorMsg" style="color: red; padding: 10px;">{{errorMsg}}</p>
+          <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>
